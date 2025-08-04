@@ -1,6 +1,6 @@
-# ColorPal - 智能色彩管理工具
+# ColorPal - 色彩管理工具
 
-![ColorPal 截图](screenshot.png)
+<img src="screenshot.png" alt="ColorPal 截图" style="width:300px;" />
 
 ColorPal 是一个响应式的网页应用，用于管理和组织颜色。它支持多种颜色输入格式，可进行颜色格式转换，并能将颜色分组管理以便快速访问。
 
@@ -79,6 +79,6 @@ ColorPal 是一个响应式的网页应用，用于管理和组织颜色。它�
 
 ## 联系方式
 
-swiftuix.com - [@您的Twitter](https://twitter.com/swiftuihome) - swiftuihome@qq.com
+邮箱: wumacms@qq.com
 
 项目地址：[https://github.com/swiftuihome/ColorPal](https://github.com/swiftuihome/ColorPal)
