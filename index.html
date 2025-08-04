@@ -155,8 +155,11 @@
                                 <input type="text" class="form-control" id="groupNameInput" placeholder="输入分组名称">
                                 <button class="btn btn-outline-secondary" type="button" id="addToGroupBtn">添加</button>
                             </div>
-                            <div id="groupTags" class="mb-3">
-                                <!-- 分组标签将在这里动态生成 -->
+                            <div class="mb-3">
+                                <!-- <h6>现有分组</h6> -->
+                                <div id="groupList" class="d-flex flex-wrap gap-2">
+                                    <!-- 分组标签将在这里动态生成 -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -244,6 +247,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             initColorInputs();
             updateColorInfo();
+            renderGroupList();
             renderColorList();
             renderGroupFilter();
 
@@ -432,7 +436,6 @@
             document.getElementById('groupNameInput').value = '';
 
             // 更新UI
-            renderGroupTags();
             renderColorList();
             renderGroupFilter();
 
@@ -459,16 +462,40 @@
             }, 3000);
         }
 
-        // 渲染分组标签
-        function renderGroupTags() {
-            const container = document.getElementById('groupTags');
+        // 渲染分组列表的函数
+        function renderGroupList() {
+            const container = document.getElementById('groupList');
             container.innerHTML = '';
 
-            currentColor.groups.forEach(group => {
+            // 获取所有唯一的分组
+            const allGroups = new Set();
+            colors.forEach(color => {
+                color.groups.forEach(group => allGroups.add(group));
+            });
+
+            // 如果没有分组，显示提示
+            if (allGroups.size === 0) {
+                container.innerHTML = '<span class="text-muted small">暂无分组</span>';
+                return;
+            }
+
+            // 添加分组标签
+            allGroups.forEach(group => {
                 const badge = document.createElement('span');
-                badge.className = 'badge bg-primary me-2 mb-2';
+                badge.className = 'badge bg-info text-dark group-select-badge';
                 badge.textContent = group;
+                badge.style.cursor = 'pointer';
+                badge.title = '点击添加到输入框';
                 container.appendChild(badge);
+            });
+
+            // 绑定点击事件
+            document.querySelectorAll('.group-select-badge').forEach(badge => {
+                badge.addEventListener('click', function () {
+                    document.getElementById('groupNameInput').value = this.textContent;
+                    // 可选：自动聚焦到输入框
+                    document.getElementById('groupNameInput').focus();
+                });
             });
         }
 
