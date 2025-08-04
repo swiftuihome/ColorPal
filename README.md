@@ -2,7 +2,7 @@
 
 <img src="screenshot.png" alt="ColorPal 截图" style="width:300px;" />
 
-ColorPal 是一个响应式的网页应用，用于管理和组织颜色。它支持多种颜色输入格式，可进行颜色格式转换，可以通过吸管拾取屏幕颜色，并能将颜色分组管理以便快速访问。
+ColorPal 是一个响应式的网页应用，用于管理和组织颜色。它支持多种颜色输入格式，可进行颜色格式转换，可以通过吸管拾取屏幕颜色，并能将颜色分组管理以便快速访问，可以导出和导入颜色数据为JSON文件。
 
 ## 功能特性
 
@@ -87,6 +87,6 @@ ColorPal 是一个响应式的网页应用，用于管理和组织颜色。它�
 
 ## 联系方式
 
-邮箱: wumacms@qq.com
+邮箱: xuebusi@qq.com
 
 项目地址：[https://github.com/swiftuihome/ColorPal](https://github.com/swiftuihome/ColorPal)
